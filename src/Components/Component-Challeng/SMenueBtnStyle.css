@@ -1,0 +1,17 @@
+
+
+
+.sMenueBtn {
+    background-color: purple;
+    color: white;
+    padding: 10px;
+    margin: 10px; 
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
+}
+
+ .sMenueBtn:hover {
+    background-color: rgb(103, 55, 103);
+ }
