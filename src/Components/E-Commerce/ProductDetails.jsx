@@ -11,6 +11,8 @@ export default function ProductDetails() {
 
     let productContex= useContext(productContext)
     console.log(productContex);
+
+
     const {prdId} = useParams()
     console.log(prdId);
     
@@ -19,30 +21,35 @@ export default function ProductDetails() {
     })
 
     console.log(prd);
-    
-  return (
-    <div style={{
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}>
-    <div
-      style={{
-        width: "400px",
-        backgroundColor: "blue",
-        color: "white",
-        height: "400px",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-      }}
-    >
-      <h1>{prd.name}</h1>
-      <p>{prd.des}</p>
-      <p>Product Countaty</p>
-    </div>
-    </div>
-  );
+    if (prd){
+      return (
+        <div style={{
+            height: "89vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}>
+        <div
+          style={{
+            width: "400px",
+            backgroundColor: "blue",
+            color: "white",
+            height: "400px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+          }}
+        >
+          <h1>{prd.name}</h1>
+          <p>{prd.des}</p>
+          <p>Product Countaty</p>
+        </div>
+        </div>
+      );
+    }else{
+      return(
+        <h1>The Product with ID: {prdId} is not exist</h1>
+      )
+    }
 }

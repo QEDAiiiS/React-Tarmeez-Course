@@ -20,7 +20,7 @@ export default function Products() {
 
   const products = productsC.map((p) => {
     return (
-      <Link key={p.id} to={`/productD${p.id}`}>
+      <Link key={p.id} to={`/Products/productD${p.id}`}>
         <div style={productStyle}>
           <h2>{p.name}</h2>
         </div>

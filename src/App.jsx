@@ -4,16 +4,15 @@ import Products from "./Components/E-Commerce/Products";
 import Form from "./Components/Form-Application/Form";
 import { Routes, Route } from "react-router-dom";
 import { productContext } from "./Components/Context/productContext";
-
+import NotFound from "./Components/NotFound";
+import Layout from "./Components/E-Commerce/Layout";
 
 function App() {
-
   let productsList = [
     { id: 1, name: "Samsung", des: "the best product on TV" },
     { id: 2, name: "LG", des: "the Second product on TV" },
     { id: 3, name: "Fresh", des: "the Third product on TV" },
   ];
-
 
   return (
     <>
@@ -22,8 +21,13 @@ function App() {
           <Route path="/" element={<h1>Welcome To Homw Page</h1>} />
           <Route path="/form" element={<Form />} />
           <Route path="/ComponentChallenge" element={<ComponentChallenge />} />
-          <Route path="/Products" element={<Products />} />
-          <Route path="/productD/:prdId" element={<ProductDetails />} />
+
+          <Route path="/Products" element={<Layout/>}>
+            <Route index element={<Products />} />
+            <Route path="productD/:prdId" element={<ProductDetails />} />
+          </Route>
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </productContext.Provider>
     </>
